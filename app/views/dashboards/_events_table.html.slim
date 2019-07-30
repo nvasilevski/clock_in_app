@@ -1,0 +1,12 @@
+table.table
+  thead
+    tr
+      <th scope="col">Event type</th>
+      <th scope="col">Created at</th>
+    </tr>
+  </thead>
+  tbody
+    - events.each do |event|
+      tr
+        td= event.pretty_name
+        td= event.pretty_datetime

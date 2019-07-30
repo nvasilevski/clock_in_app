@@ -1,3 +1,10 @@
-= link_to 'Logout', logout_path, class: 'btn btn-danger'
-- EventTypes.list.each do |event|
-  = clock_event_button(event)
+.d-flex.justify-content-between
+  h4 = t('dashboard.salutation', fullname: current_user.fullname, status: current_user.status)
+  = link_to 'Logout', logout_path, class: 'btn btn-danger btn-sm'
+.d-flex
+  - @presenter.available_events.each do |event|
+    .mr-1= clock_event_button(event)
+
+.mt-3
+  h5 = t('dashboard.events_table')
+  =render 'events_table', events: @presenter.user_events

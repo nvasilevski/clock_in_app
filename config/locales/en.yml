@@ -8,3 +8,6 @@ en:
     creation:
       success: 'Success'
       failure: 'Something went wrong'
+  dashboard:
+    events_table: 'Your latest events'
+    salutation: "Hello %{fullname}, your current status is %{status}"
