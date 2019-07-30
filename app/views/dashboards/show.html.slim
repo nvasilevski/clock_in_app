@@ -1,5 +1,5 @@
 .d-flex.justify-content-between
-  h4 = t('dashboard.salutation', fullname: current_user.fullname, status: current_user.status)
+  h4 = t('dashboard.salutation', fullname: @presenter.current_user.fullname, status: @presenter.current_user_status)
   = link_to 'Logout', logout_path, class: 'btn btn-danger btn-sm'
 .d-flex
   - @presenter.available_events.each do |event|

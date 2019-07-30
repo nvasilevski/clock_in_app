@@ -11,3 +11,6 @@ en:
   dashboard:
     events_table: 'Your latest events'
     salutation: "Hello %{fullname}, your current status is %{status}"
+  user_statuses:
+    clock_in: 'Clocked In'
+    clock_out: 'Clocked Out'

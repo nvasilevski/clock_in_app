@@ -13,4 +13,8 @@ class DashboardPresenter
   def available_events
     EventTypes.list
   end
+
+  def current_user_status
+    I18n.t("user_statuses.#{current_user.status}")
+  end
 end
