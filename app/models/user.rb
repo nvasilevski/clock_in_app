@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  ADMIN_LOGIN = 'admin'.freeze
+
   validates :login, presence: true, uniqueness: true
   validates :fullname, presence: true, uniqueness: true
 
@@ -6,6 +8,11 @@ class User < ApplicationRecord
 
 
   def status
-    clock_events.last.event_type
+    clock_events.last&.event_type || EventTypes::CLOCK_OUT
+  end
+
+  # Just to simplify logic as authentication funcatinality is not the main goal
+  def is_admin?
+    login == ADMIN_LOGIN
   end
 end

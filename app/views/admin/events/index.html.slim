@@ -1,0 +1,18 @@
+table.table
+  thead
+    tr
+      th scope="col" Id
+      th scope="col" Event type
+      th scope="col" Created at
+      th scope="col" User id
+      th scope="col" Actions
+  tbody
+    - @events.each do |event|
+      tr
+        td= event.id
+        td= event.pretty_name
+        td= event.pretty_datetime
+        td= event.user_id
+        td Actions
+
+= will_paginate @paginated_events, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
