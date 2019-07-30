@@ -1,3 +1,6 @@
 en:
   registration:
     success: 'You have successfully registered. Please log in using your login or Fullname'
+  login: 
+    success: 'You have successfully logged in'
+    failed: 'Can not find a user with provided credentials'

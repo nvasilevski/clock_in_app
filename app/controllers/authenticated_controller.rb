@@ -5,7 +5,7 @@ class AuthenticatedController < ApplicationController
 
     helper_method :current_user
     def current_user
-      @current_user ||= User.find_by(id: session[:current_user_id])
+      @current_user ||= User.find_by(id: session[AuthenticationSystem::USER_ID_SESSION_KEY])
     end
 
     def require_login
