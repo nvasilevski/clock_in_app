@@ -7,4 +7,4 @@
 
 .mt-3
   h5 = t('dashboard.events_table')
-  =render 'events_table', events: @presenter.user_events
+  =render 'events_table', events: @presenter.user_events, paginated_events: @presenter.paginated_user_events

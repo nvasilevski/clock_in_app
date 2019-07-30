@@ -8,3 +8,5 @@ table.table
       tr
         td= event.pretty_name
         td= event.pretty_datetime
+
+= will_paginate paginated_events, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
