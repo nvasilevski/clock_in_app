@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
 
   resources :users, only: %i[new create]
+  resources :clock_events, only: %i[create]
 
   root 'dashboards#show'
 end

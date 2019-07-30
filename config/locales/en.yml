@@ -4,3 +4,7 @@ en:
   login: 
     success: 'You have successfully logged in'
     failed: 'Can not find a user with provided credentials'
+  clock_events:
+    creation:
+      success: 'Success'
+      failure: 'Something went wrong'

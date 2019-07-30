@@ -1,1 +1,3 @@
 = link_to 'Logout', logout_path, class: 'btn btn-danger'
+- EventTypes.list.each do |event|
+  = clock_event_button(event)
