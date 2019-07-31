@@ -1,6 +1,8 @@
 .d-flex.justify-content-between
   h4 = t('dashboard.salutation', fullname: @presenter.current_user.fullname, status: @presenter.current_user_status)
   = link_to 'Logout', logout_path, class: 'btn btn-danger btn-sm'
+  - if current_user.is_admin?
+    = link_to 'Admin Dashboard', admin_events_path, class: 'btn btn-success btn-sm'
 .d-flex
   - @presenter.available_events.each do |event|
     .mr-1= clock_event_button(event)
