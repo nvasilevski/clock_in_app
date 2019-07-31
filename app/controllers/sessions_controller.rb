@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:success] = t('login.success')
       redirect_to root_path
     else
-      flash[:alert] = t('login.failed')
+      flash[:danger] = t('login.failed')
       redirect_back(fallback_location: root_path)
     end
   end

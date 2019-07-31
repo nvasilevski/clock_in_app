@@ -4,7 +4,7 @@ class ClockEventsController < AuthenticatedController
     if event.save
       flash[:success] = t('clock_events.creation.success')
     else
-      flash[:notice] = t('clock_events.creation.failure')
+      flash[:danger] = t('clock_events.creation.failure', errors: event.errors.full_messages.join(' '))
     end
 
     redirect_back(fallback_location: root_path)

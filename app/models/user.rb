@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
 
   def status
-    clock_events.last&.event_type || EventTypes::CLOCK_OUT
+    clock_events.persisted.last&.event_type || EventTypes::CLOCK_OUT
   end
 
   # Just to simplify logic as authentication funcatinality is not the main goal
