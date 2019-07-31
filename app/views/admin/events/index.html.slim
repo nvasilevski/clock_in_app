@@ -13,6 +13,9 @@ table.table
         td= event.pretty_name
         td= event.pretty_datetime
         td= event.user_id
-        td Actions
+        td
+          = link_to 'Edit', edit_admin_event_path(event), class: 'btn btn-primary btn-sm'
+          = link_to 'Delete', admin_event_path(event),
+              class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: I18n.t('confirmation') }
 
 = will_paginate @paginated_events, renderer: WillPaginate::ActionView::BootstrapLinkRenderer

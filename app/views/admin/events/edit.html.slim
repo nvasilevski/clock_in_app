@@ -1,0 +1,6 @@
+= simple_form_for @event, url: admin_event_path, method: :put do |f|
+  = f.error_notification
+  = f.input :event_type, as: :radio_buttons, collection: EventTypes.to_a
+  = f.input :user_id, collection: users_collection, include_blank: false
+  = f.input :created_at, as: :datetime
+  = f.submit 'Update', class: 'btn btn-primary'

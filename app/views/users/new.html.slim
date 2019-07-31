@@ -1,5 +1,6 @@
 h5.card-title.text-center Register
 = simple_form_for @user, url: users_path do |f|
+  = f.error_notification
   = f.input :login, required: true
   = f.input :fullname, required: true
   = f.submit label: 'Register', class: 'btn btn-primary'

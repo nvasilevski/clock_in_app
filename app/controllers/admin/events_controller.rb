@@ -7,7 +7,39 @@ module Admin
       @events = ClockEventDecorator.wrap(@paginated_events)
     end
 
+    def edit
+      @event = Events::ClockEvent.find(params[:id])
+    end
+
+    def update
+      @event = Events::ClockEvent.find(params[:id])
+
+      if @event.update(event_params)
+        flash[:success] = "#{EventTypes.t(@event.event_type)} event was updated successfully"
+        redirect_to admin_events_path
+      else
+        flash[:danger] = 'Cannot update event'
+        render :edit
+      end
+    end
+
+    def destroy
+      event = Events::ClockEvent.find(params[:id])
+
+      if event.destroy
+        flash[:success] = "#{EventTypes.t(event.event_type)} event was deleted successfully"
+      else
+        flash[:danger] = 'Cannot delete event'
+      end
+
+      redirect_back(fallback_location: root_path)
+    end
+
     private
+
+    def event_params
+      params.require(:events_clock_event).permit(:event_type, :created_at, :user_id)
+    end
 
     def current_page
       params[:page] || 1

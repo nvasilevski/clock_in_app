@@ -1,4 +1,5 @@
 en:
+  confirmation: 'Are you sure?'
   registration:
     success: 'You have successfully registered. Please log in using your login or Fullname'
   login: 
